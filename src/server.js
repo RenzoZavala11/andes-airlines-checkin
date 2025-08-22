@@ -1,7 +1,12 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import { connect, db as sequelize } from './db/index.js';
+import { connect, db as sequelize } from './config/db.js';
 import app from './index.js';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './config/swagger.js';
+
+// Configurar ruta para la documentación Swagger
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 const PORT = process.env.PORT || 3000;
