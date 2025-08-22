@@ -3,7 +3,6 @@ import mysql2 from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 
-
 const db = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -24,12 +23,9 @@ const db = new Sequelize(
   }
 );
 
-
-
 export async function connect() {
   await db.authenticate(); // prueba conexión
-  console.log('✅ Conexión MySQL OK');
+  console.log('✅ Conexión a DB establecida');
 }
 
 export { db };
-export default db;

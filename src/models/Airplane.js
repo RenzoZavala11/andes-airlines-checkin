@@ -1,4 +1,4 @@
-import db from "../db/index.js";
+import { db } from "../config/db.js";
 import { Sequelize } from "sequelize";
 
 export const Airplane = db.define("airplane", {
