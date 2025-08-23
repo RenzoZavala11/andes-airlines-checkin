@@ -9,6 +9,8 @@ Una API REST construida con Express.js y Sequelize que permite gestionar el chec
 - **Agrupación familiar**: Los pasajeros de la misma compra se sientan juntos cuando es posible
 - **Gestión por tipo de asiento**: Respeta las preferencias de clase (económica, ejecutiva, primera)
 - **Base de datos relacional**: Modelos bien estructurados con Sequelize ORM
+- **CORS habilitado**: Permite la integración con aplicaciones frontend desde diferentes dominios
+- **Documentación interactiva**: Interfaz Swagger UI disponible en la ruta `/docs`
 
 ## Prerequisitos
 
@@ -56,7 +58,9 @@ npm run dev
 npm start
 ```
 
-La API estará disponible en `http://localhost:3000`
+La API estará disponible en:
+- Desarrollo: `http://localhost:3000`
+- Producción: `https://andes-airlines-checkin-production.up.railway.app`
 
 ## API Endpoints
 
@@ -153,6 +157,29 @@ Boarding_pass N:1 Seat N:1 Seat_type
 Boarding_pass N:1 Purchase
 ```
 
+## Deploy
+
+### Backend (API)
+
+La API está desplegada en [Railway](https://railway.app/), una plataforma moderna de hosting para aplicaciones web:
+
+- **URL Base**: `https://andes-airlines-checkin-production.up.railway.app`
+- **Endpoint de ejemplo**: [/flights/1/passengers](https://andes-airlines-checkin-production.up.railway.app/flights/1/passengers)
+- **Documentación Swagger**: [/docs](https://andes-airlines-checkin-production.up.railway.app/docs)
+
+### Frontend de la Aplicación
+
+La interfaz de usuario está desplegada en [Netlify](https://www.netlify.com/), una plataforma para hosting de sitios estáticos y aplicaciones web:
+
+- **URL**: [https://andes-airlines-rz.netlify.app/](https://andes-airlines-rz.netlify.app/)
+
+## Documentación de la API
+
+La documentación completa de la API está disponible a través de Swagger UI:
+
+- **Desarrollo**: `http://localhost:3000/docs`
+- **Producción**: `https://andes-airlines-checkin-production.up.railway.app/docs`
+
 ## Tecnologías Utilizadas
 
 - **Express.js**: Framework web para Node.js
@@ -162,3 +189,4 @@ Boarding_pass N:1 Purchase
 - **nodemon**: Herramienta para desarrollo que reinicia el servidor automáticamente
 - **swagger-jsdoc**: Generador de documentación Swagger a partir de comentarios JSDoc
 - **swagger-ui-express**: Cliente Swagger para Express.js
+- **cors**: Middleware para habilitar Cross-Origin Resource Sharing (CORS) y permitir peticiones desde otros dominios
